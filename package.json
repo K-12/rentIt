@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/K-12/rentIt/issues"
   },
-  "homepage": "https://github.com/K-12/rentIt#readme"
+  "homepage": "https://github.com/K-12/rentIt#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.12"
+  }
 }
