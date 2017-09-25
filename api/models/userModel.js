@@ -24,11 +24,9 @@ var UserModel = new Model({
         default: ['Kitas']
     },
     registered_date: {
-        type: date,
-        default: date.now()
+        type: Date,
+        default: Date.now()
     }
-
 });
-
 
 module.exports = mongoose.model('Users', UserModel);

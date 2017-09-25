@@ -3,7 +3,7 @@ var express = require('express'),
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
     Ad = require('./api/models/adModel'), //created model loading here
-    User = require ('./api/models/userModel')
+    User = require ('./api/models/userModel'),
     bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
@@ -16,9 +16,10 @@ app.use(bodyParser.json());
 
 
 var adRoutes = require('./api/routes/adRoutes'); //importing route
-var userRoutes = require('./api/routes/userRoutes');
 adRoutes(app); //register the route
-userRouter(app);
+
+var userRoutes = require('./api/routes/userRoutes');
+userRoutes(app);
 
 
 app.listen(port);
