@@ -40,7 +40,7 @@ exports.register = function(req, res) {
         if (!user.comparePassword(req.body.password)) {
           res.status(401).json({ message: 'Authentication failed. Wrong password.' });
         } else {
-          return res.json({token: jwt.sign({ name: user.name, _id: user._id}, 'RESTFULAPIs')});
+          return res.json({token: jwt.sign({ name: user.name, ID: user.ID}, 'RESTFULAPIs', { expiresIn: 60*60})});
         }
       }
     });
@@ -69,7 +69,10 @@ exports.get_user = function(req, res) {
     User.findById(req.params.userId, function(err, object) {
         if (err)
             res.send(err);
-        res.json(object);
+        if (object==null)
+            res.sendStatus(404);
+        else
+            res.json(object);
     });
 };
 
