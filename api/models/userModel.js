@@ -1,5 +1,6 @@
 'use strict';
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+bcrypt = require('bcrypt');
 var Model = mongoose.Schema;
 
 var UserModel = new Model({
@@ -8,6 +9,10 @@ var UserModel = new Model({
         required: 'Enter user ID'
     },
     name: {
+        type: String,
+        required: 'Enter user name'
+    },
+    hash_password: {
         type: String,
         required: 'Enter user name'
     },
@@ -23,10 +28,14 @@ var UserModel = new Model({
         enum: ['Vilnius', 'Kaunas', 'Klaipeda', 'Kitas'],
         default: ['Kitas']
     },
-    registered_date: {
+    created: {
         type: Date,
         default: Date.now()
     }
 });
+
+UserModel.methods.comparePassword = function(password){
+    return bcrypt.compareSync(password, this.hash_password);
+};
 
 module.exports = mongoose.model('Users', UserModel);
