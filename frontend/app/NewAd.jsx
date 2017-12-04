@@ -105,7 +105,7 @@ export default class NewAd extends React.Component {
             <option value="Rented">Rented</option>
           </select>
         </div>
-        <button onClick={this.handleSubmit}>Register</button>
+        <button onClick={this.handleSubmit}>Post</button>
       </div>
     );
   }
