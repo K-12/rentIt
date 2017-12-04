@@ -1,6 +1,6 @@
-// cd to back-end
-npm i
-npm start
+// cd to back-end\n
+npm i\n
+npm start\n
 
 // cd to front-dn
 npm i
