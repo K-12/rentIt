@@ -1,0 +1,27 @@
+{
+  "name": "rentit",
+  "version": "1.0.0",
+  "description": "Project for Saitynai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K-12/rentIt.git"
+  },
+  "author": "Lukas Grinkevicius",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/K-12/rentIt/issues"
+  },
+  "homepage": "https://github.com/K-12/rentIt#readme",
+  "devDependencies": {
+    "cors": "^2.8.4",
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.12"
+  }
+}
