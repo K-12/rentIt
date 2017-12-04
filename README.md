@@ -5,7 +5,7 @@ npm i
 npm start
 
 
-// cd to front-dn
+// cd to front-end
 
 npm i
 
