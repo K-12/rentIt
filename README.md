@@ -1,4 +1,4 @@
-// cd to back-end\n
+// cd to back-end /n
 npm i\n
 npm start\n
 
