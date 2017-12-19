@@ -10,7 +10,7 @@ var UserModel = new Model({
     },
     hash_password: {
         type: String,
-        required: 'Enter user name'
+        required: 'Enter user password'
     },
     description: {
         type: String
