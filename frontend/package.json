@@ -1,12 +1,14 @@
 {
-  "name": "todo-react",
+  "name": "rentit-react",
   "private": true,
   "version": "1.0.0",
-  "description": "Example app for teaching in sourcery",
+  "description": "Project for KTu",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --hot",
     "test": "jest",
+    "eslint" : "eslint ./**",
+    "fixcode" : "eslint --fix ./**",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },

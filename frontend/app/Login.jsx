@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -16,17 +15,15 @@ export default class Login extends React.Component {
   handleNameChange(e) {
     this.setState(...this.state, { name: e.target.value });
   }
-  handlePasswordChange(e)
-  {
+  handlePasswordChange(e) {
     this.setState(...this.state, { password: e.target.value });
   }
 
-  handleLogin(e) {
+  handleLogin() {
     this.sendData();
   }
 
-  sendData()
-  {
+  sendData() {
     fetch('http://localhost:3000/auth/login', {
       method: 'POST',
       headers: {
@@ -35,8 +32,7 @@ export default class Login extends React.Component {
       body: JSON.stringify(this.state),
     }).then(response => response.json())
       .then((responseJson) => {
-        if (responseJson.token != undefined)
-        { this.props.setLogin(responseJson.token, responseJson.name); }
+        if (responseJson.token !== undefined) { this.props.setLogin(responseJson.token, responseJson.name); }
       })
       .catch((error) => {
         console.log('Request failure: ', error);

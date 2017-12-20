@@ -1,13 +1,10 @@
 import React from 'react';
-import { render } from 'react-dom';
 
 export default class UserList extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isLoading: true,
-      text: 'Loading...',
       users: [],
     };
     this.getData = this.getData.bind(this);
@@ -16,8 +13,7 @@ export default class UserList extends React.Component {
   componentDidMount() {
     this.getData();
   }
-  getData()
-  {
+  getData() {
     return fetch('http://localhost:3000/users', {
       method: 'GET',
     })
@@ -25,9 +21,7 @@ export default class UserList extends React.Component {
       .then((responseJson) => {
         console.log(responseJson);
         this.setState({
-          isLoading: false,
           users: responseJson,
-          text: 'hello',
         }, () => {
           // do something with new state
         });
@@ -48,10 +42,12 @@ export default class UserList extends React.Component {
           <div>ID: {user._id}</div>
         </li>
       </div>));
-    return (<div>
-      <div><h2>User list</h2></div>
-      <ul className="list-group">{userList}</ul>
-      <button onClick={this.getData}>Refresh</button>
-    </div>);
+    return (
+      <div>
+        <div><h2>User list</h2></div>
+        <ul className="list-group">{userList}</ul>
+        <button onClick={this.getData}>Refresh</button>
+      </div>
+    );
   }
 }

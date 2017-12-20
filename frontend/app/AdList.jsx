@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 
 export default class AdList extends React.Component {
   constructor(props) {
@@ -7,7 +6,6 @@ export default class AdList extends React.Component {
 
     this.state = {
       isLoading: true,
-      text: 'Loading...',
       ads: [],
     };
     this.getData = this.getData.bind(this);
@@ -31,7 +29,6 @@ export default class AdList extends React.Component {
         this.setState({
           isLoading: false,
           ads: responseJson,
-          text: 'hello',
         }, () => {
           // do something with new state
         });
@@ -55,12 +52,18 @@ export default class AdList extends React.Component {
         </div>));
       return (
         <div>
-          <div><h2>Ad list</h2></div>
+          <div>
+            <h2>
+            Ad list
+            </h2>
+          </div>
           <ul className="list-group">{adList}</ul>
-          <button onClick={this.getData}> press to work </button>
-        </div>);
+          <button onClick={this.getData}>
+          press to work
+          </button>
+        </div>
+      );
     }
-
     return ('Loading');
   }
 }

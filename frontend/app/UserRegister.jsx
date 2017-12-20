@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 
 export default class UserRegister extends React.Component {
   constructor(props) {
@@ -18,15 +17,16 @@ export default class UserRegister extends React.Component {
     this.handleRegister = this.handleRegister.bind(this);
     this.sendData = this.sendData.bind(this);
   }
+
+  componentDidMount() {
+  }
   handleNameChange(e) {
     this.setState(...this.state, { name: e.target.value });
   }
-  handleNumberChange(e)
-  {
+  handleNumberChange(e) {
     this.setState(...this.state, { number: e.target.value });
   }
-  handlePasswordChange(e)
-  {
+  handlePasswordChange(e) {
     this.setState(...this.state, { password: e.target.value });
   }
   handleLocationChange(e) {
@@ -37,8 +37,7 @@ export default class UserRegister extends React.Component {
     this.sendData();
   }
 
-  sendData()
-  {
+  sendData() {
     const testPayload = {
       name: 'hello',
       number: '123',
@@ -54,15 +53,13 @@ export default class UserRegister extends React.Component {
     })
       .then((data) => {
         console.log('Request success: ', data);
-        this.props.register("Success. You can now log in!")
+        this.props.register('Success. You can now log in!');
       })
       .catch((error) => {
         console.log('Request failure: ', error);
       });
   }
 
-  componentDidMount() {
-  }
   render() {
     return (
       <div className="container" style={{ border: '1px solid', padding: '30px' }}>
